@@ -16,14 +16,36 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LogIn"
-        android:id="@+id/btn_login"
+        android:text="LogIn user"
+        android:id="@+id/btn_loginUser"
         android:layout_below="@+id/btn_profile"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SignUp"
-        android:id="@+id/btn_sign_up"
-        android:layout_below="@+id/btn_login"
-        android:layout_marginTop="20dp"/>
+        android:text="LogIn lecturer"
+        android:id="@+id/btn_loginLecturer"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/btn_profile"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LogIn admin"
+        android:id="@+id/btn_loginAdmin"
+        android:layout_marginTop="120dp"
+        android:layout_below="@+id/btn_profile"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SignUp user"
+        android:id="@+id/btn_sign_upUser"
+        android:layout_below="@+id/btn_loginUser"
+        android:layout_marginTop="140dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SignUp lecturer"
+        android:id="@+id/btn_sign_upLecturer"
+        android:layout_below="@+id/btn_loginLecturer"
+        android:layout_marginTop="150dp"/>
 </RelativeLayout>

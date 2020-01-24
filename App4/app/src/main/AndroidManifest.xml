@@ -28,7 +28,9 @@
         </activity>
         <activity android:name=".SignUpActivityLecturer" >
         </activity>
-        
+        <activity android:name=".LoginActivityAdmin" >
+        </activity>
+
 
     </application>
 
