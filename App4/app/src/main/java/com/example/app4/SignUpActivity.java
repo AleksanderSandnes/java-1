@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
 
-public abstract class SignUpActivity extends AppCompatActivity {
+public  class SignUpActivity extends AppCompatActivity {
     EditText editTextName, editTextEmail, editTextPassword, editTextStudieretning, editTextYear;
 
     @Override
@@ -52,6 +52,8 @@ public abstract class SignUpActivity extends AppCompatActivity {
         final String name = editTextName.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
+        final String studieretning = editTextStudieretning.getText().toString().trim();
+        final String year = editTextYear.getText().toString().trim();
 
         //validations
         if (TextUtils.isEmpty(name)) {
@@ -77,18 +79,31 @@ public abstract class SignUpActivity extends AppCompatActivity {
             return;
         }
 
+        if (TextUtils.isEmpty(studieretning)) {
+            editTextStudieretning.setError("Enter a study");
+            editTextStudieretning.requestFocus();
+            return;
+        }
+
+        if (TextUtils.isEmpty(year)) {
+            editTextYear.setError("Enter a year");
+            editTextYear.requestFocus();
+            return;
+        }
         //if it passes all the validations
         //executing the async task
-        RegisterUser ru = new RegisterUser(name,email,password);
+        RegisterUser ru = new RegisterUser(name,email,password,studieretning,year);
         ru.execute();
     }
     private class RegisterUser extends AsyncTask<Void, Void, String> {
         private ProgressBar progressBar;
-        private String username,email,password;
-        RegisterUser(String username,String email, String password){
-            this.username = username;
+        public String name,email,password, studieretning, year;
+        RegisterUser(String name,String email, String password, String studieretning, String year){
+            this.name = name;
             this.password = password;
             this.email = email;
+            this.studieretning = studieretning;
+            this.year = year;
         }
         @Override
         protected void onPreExecute() {
@@ -103,10 +118,11 @@ public abstract class SignUpActivity extends AppCompatActivity {
 
             //creating request parameters
             HashMap<String, String> params = new HashMap<>();
-            params.put("username", username);
+            params.put("name", name);
             params.put("email", email);
             params.put("password", password);
-
+            params.put("studieretning", studieretning);
+            params.put("year", year);
             //returing the response
             return requestHandler.sendPostRequest(URLS.URL_REGISTER, params);
         }

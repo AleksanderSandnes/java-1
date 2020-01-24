@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     TextView textViewId, textViewUsername, textViewEmail, textViewGender;
 
