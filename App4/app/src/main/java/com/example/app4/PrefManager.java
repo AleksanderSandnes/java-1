@@ -9,6 +9,9 @@ public class PrefManager {
     private static final String KEY_NAME = "user_name";
     private static final String KEY_EMAIL = "user_email";
     private static final String KEY_ID = "user_id";
+    private static final String KEY_NAMELECTURER = "lecturer_name";
+    private static final String KEY_EMAILLECTURER = "lecturer_email";
+    private static final String KEY_IDLECTURER = "lecturer_id";
     private static final String KEY_NAMEADMIN = "admin_name";
     private static final String KEY_EMAILADMIN = "admin_email";
     private static final String KEY_IDADMIN = "admin_id";
@@ -41,6 +44,15 @@ public class PrefManager {
         editor.putInt(KEY_IDADMIN, admin.getId());
         editor.putString(KEY_NAMEADMIN, admin.getUsername());
         editor.putString(KEY_EMAILADMIN, admin.getEmail());
+        editor.putBoolean(KEY_IS_LOGGED_IN,true);
+        editor.apply();
+    }
+    public void setLecturerLogin(Lecturer lecturer) {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(KEY_IDLECTURER, lecturer.getId());
+        editor.putString(KEY_NAMELECTURER, lecturer.getName());
+        editor.putString(KEY_EMAILLECTURER, lecturer.getEmail());
         editor.putBoolean(KEY_IS_LOGGED_IN,true);
         editor.apply();
     }

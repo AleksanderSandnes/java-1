@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 public class LoginActivityLecturer extends AppCompatActivity {
 
-    EditText editTextEmail, editTextPassword;
+    EditText editTextEmailLecturer, editTextPasswordLecturer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +29,13 @@ public class LoginActivityLecturer extends AppCompatActivity {
         init();
     }
     void init(){
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextEmailLecturer = findViewById(R.id.editTextEmailLecturer);
+        editTextPasswordLecturer = findViewById(R.id.editTextPasswordLecturer);
         //if user presses on login calling the method login|
         findViewById(R.id.buttonLoginLecturer).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                userLogin();
+                lecturerLogin();
             }
         });
         //if user presses on not registered
@@ -43,34 +43,34 @@ public class LoginActivityLecturer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open register screen
-                startActivity(new Intent(getApplicationContext(), LoginActivityLecturer.class));
+                startActivity(new Intent(getApplicationContext(), SignUpActivityLecturer.class));
                 finish();
             }
         });
     }
-    private void userLogin() {
+    private void lecturerLogin() {
         //first getting the values
-        final String email = editTextEmail.getText().toString();
-        final String password = editTextPassword.getText().toString();
+        final String email = editTextEmailLecturer.getText().toString();
+        final String password = editTextPasswordLecturer.getText().toString();
         //validating inputs
         if (TextUtils.isEmpty(email)) {
-            editTextEmail.setError("Please enter email");
-            editTextEmail.requestFocus();
+            editTextEmailLecturer.setError("Please enter email");
+            editTextEmailLecturer.requestFocus();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            editTextPassword.setError("Please enter password");
-            editTextPassword.requestFocus();
+            editTextPasswordLecturer.setError("Please enter password");
+            editTextPasswordLecturer.requestFocus();
             return;
         }
         //if everything is fine
-        UserLogin ul = new UserLogin(email,password);
+        LecturerLogin ul = new LecturerLogin(email,password);
         ul.execute();
     }
-    class UserLogin extends AsyncTask<Void, Void, String> {
+    class LecturerLogin extends AsyncTask<Void, Void, String> {
         ProgressBar progressBar;
         String email, password;
-        UserLogin(String email,String password) {
+        LecturerLogin(String email,String password) {
             this.email = email;
             this.password = password;
         }
@@ -93,17 +93,17 @@ public class LoginActivityLecturer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                     //getting the user from the response
-                    JSONObject userJson = obj.getJSONObject("user");
+                    JSONObject lecturerJson = obj.getJSONObject("lecturer");
 
                     //creating a new user object
-                    User user = new User(
-                            userJson.getInt("id"),
-                            userJson.getString("name"),
-                            userJson.getString("email")
+                    Lecturer lecturer = new Lecturer(
+                            lecturerJson.getInt("id"),
+                            lecturerJson.getString("name"),
+                            lecturerJson.getString("email")
                     );
 
                     //storing the user in shared preferences
-                    PrefManager.getInstance(getApplicationContext()).setUserLogin(user);
+                    PrefManager.getInstance(getApplicationContext()).setLecturerLogin(lecturer);
 
                     //starting the profile activity
                     finish();
