@@ -28,8 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         init();
     }
     void init(){
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextEmail = findViewById(R.id.editTextEmailLecturer);
+        editTextPassword = findViewById(R.id.editTextPasswordLecturer);
         //if user presses on login calling the method login|
         findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open register screen
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
                 finish();
             }
         });

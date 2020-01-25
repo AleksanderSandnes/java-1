@@ -1,6 +1,5 @@
 package com.example.app4;
 
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,11 +24,11 @@ public  class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        editTextName = findViewById(R.id.editTextName);
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextName = findViewById(R.id.editTextNameLecturer);
+        editTextEmail = findViewById(R.id.editTextEmailLecturer);
+        editTextPassword = findViewById(R.id.editTextPasswordLecturer);
         editTextStudieretning = findViewById(R.id.editTextStudieretning);
-        editTextYear = findViewById(R.id.editTextYear);
+        editTextYear = findViewById(R.id.editTextBildeURL);
 
         findViewById(R.id.btn_register).setOnClickListener(new View.OnClickListener() {
             @Override
