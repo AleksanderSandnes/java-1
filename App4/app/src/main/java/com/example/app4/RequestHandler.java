@@ -1,5 +1,7 @@
 package com.example.app4;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -22,18 +24,22 @@ public class RequestHandler {
         try {
             url = new URL(requestURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            System.out.println(conn + " CONNEN");
             conn.setReadTimeout(15000);
             conn.setConnectTimeout(15000);
-            conn.setRequestMethod("POST");
-            conn.setDoInput(true);
-            conn.setDoOutput(true);
+            conn.setRequestMethod("GET");
 
             OutputStream os = conn.getOutputStream();
+            System.out.println("1. steg");
             BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(os, "UTF-8"));
+            System.out.println("2. steg");
             writer.write(getPostDataString(postDataParams));
+            System.out.println("3. steg");
             writer.flush();
+            System.out.println("4. steg");
             writer.close();
+            System.out.println("5. steg");
             os.close();
 
             int responseCode = conn.getResponseCode();
@@ -45,9 +51,13 @@ public class RequestHandler {
                     sb.append(response);
                 }
             }
+            System.out.println("ferdig steg");
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("oida");
         }
+        Log.d(sb.toString(), ": sb");
+        Log.d(postDataParams.toString(), ": postDataParams");
         return sb.toString();
     }
 

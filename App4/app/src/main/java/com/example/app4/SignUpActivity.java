@@ -123,6 +123,7 @@ public  class SignUpActivity extends AppCompatActivity {
             params.put("studieretning", studieretning);
             params.put("year", year);
             //returing the response
+            System.out.println(params + " MONEY");
             return requestHandler.sendPostRequest(URLS.URL_REGISTER, params);
         }
 
