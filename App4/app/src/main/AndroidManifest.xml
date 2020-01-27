@@ -36,6 +36,10 @@
         </activity>
         <activity android:name=".LoginActivityAdmin" >
         </activity>
+        <activity android:name=".ProfileActivityAdmin">
+        </activity>
+        <activity android:name=".ProfileActivityLecturer" >
+        </activity>
 
 
     </application>

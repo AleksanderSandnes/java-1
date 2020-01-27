@@ -37,15 +37,6 @@ public class LoginActivityAdmin extends AppCompatActivity {
                 adminLogin();
             }
         });
-        //if user presses on not registered
-        findViewById(R.id.textViewRegister).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //open register screen
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
-            }
-        });
     }
     private void adminLogin() {
         //first getting the values
@@ -106,7 +97,7 @@ public class LoginActivityAdmin extends AppCompatActivity {
 
                     //starting the profile activity
                     finish();
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    startActivity(new Intent(getApplicationContext(), ProfileActivityAdmin.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
