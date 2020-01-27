@@ -36,10 +36,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="LogIn Anon"
+        android:id="@+id/btn_loginAnon"
+        android:layout_marginTop="180dp"
+        android:layout_below="@+id/btn_profile"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="SignUp user"
         android:id="@+id/btn_sign_upUser"
         android:layout_below="@+id/btn_loginUser"
-        android:layout_marginTop="140dp"/>
+        android:layout_marginTop="190dp"/>
 
     <Button
         android:layout_width="match_parent"
@@ -47,5 +54,5 @@
         android:text="SignUp lecturer"
         android:id="@+id/btn_sign_upLecturer"
         android:layout_below="@+id/btn_loginLecturer"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="190dp"/>
 </RelativeLayout>

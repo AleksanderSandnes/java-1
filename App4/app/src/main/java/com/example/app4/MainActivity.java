@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Button loginLecturer = findViewById(R.id.btn_loginLecturer);
         Button sign_upLecturer = findViewById(R.id.btn_sign_upLecturer);
         Button loginAdmin = findViewById(R.id.btn_loginAdmin);
+        Button loginAnon = findViewById(R.id.btn_loginAnon);
 
         PrefManager prefManager = PrefManager.getInstance(MainActivity.this);
         if(prefManager.isLoggedIn()) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             loginLecturer.setVisibility(View.GONE);
             sign_upLecturer.setVisibility(View.GONE);
             loginAdmin.setVisibility(View.GONE);
+            loginAnon.setVisibility(View.GONE);
 
             profile.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -66,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     startActivity(new Intent(MainActivity.this,LoginActivityAdmin.class));
+                }
+            });
+            loginAnon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(MainActivity.this,LoginActivityAnon.class));
                 }
             });
         }
