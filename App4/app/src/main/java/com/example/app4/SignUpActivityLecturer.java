@@ -133,13 +133,13 @@ public  class SignUpActivityLecturer extends AppCompatActivity {
                     //getting the user from the response
                     JSONObject UserJson = obj.getJSONObject("user");
                     //creating a new user object
-                    Lecturer lecturer = new Lecturer(
+                    User user = new User(
                             UserJson.getInt("id"),
                             UserJson.getString("username"),
                             UserJson.getString("email")
                     );
                     //storing the user in shared preferences
-                    PrefManager.getInstance(getApplicationContext()).setLecturerLogin(lecturer);
+                    PrefManager.getInstance(getApplicationContext()).setUserLogin(user);
                     //starting the profile activity
                     finish();
                     startActivity(new Intent(getApplicationContext(), ProfileActivityLecturer.class));

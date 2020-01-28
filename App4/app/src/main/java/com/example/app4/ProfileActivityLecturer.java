@@ -24,12 +24,12 @@ public class ProfileActivityLecturer extends AppCompatActivity {
         textViewPassword = findViewById(R.id.editTextPasswordLecturer);
 
         //getting the current user
-        Lecturer lecturer = PrefManager.getInstance(this).getLecturer();
+        User user = PrefManager.getInstance(this).getUser();
 
         //setting the values to the textviews
-        textViewId.setText(String.valueOf(lecturer.getId()));
-        textViewEmail.setText(lecturer.getEmail());
-        textViewPassword.setText(lecturer.getPassword());
+        textViewId.setText(String.valueOf(user.getId()));
+        textViewEmail.setText(user.getEmail());
+        textViewPassword.setText(user.getPassword());
 
         //when the user presses logout button calling the logout method
         findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
