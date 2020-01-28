@@ -27,7 +27,7 @@ public class RequestHandler {
             System.out.println(conn + " CONNEN");
             conn.setReadTimeout(15000);
             conn.setConnectTimeout(15000);
-            conn.setRequestMethod("GET");
+            conn.setRequestMethod("POST");
 
             OutputStream os = conn.getOutputStream();
             System.out.println("1. steg");
@@ -35,7 +35,7 @@ public class RequestHandler {
                     new OutputStreamWriter(os, "UTF-8"));
             System.out.println("2. steg");
             writer.write(getPostDataString(postDataParams));
-            System.out.println("3. steg");
+            System.out.println("3. steg" + getPostDataString(postDataParams) );
             writer.flush();
             System.out.println("4. steg");
             writer.close();

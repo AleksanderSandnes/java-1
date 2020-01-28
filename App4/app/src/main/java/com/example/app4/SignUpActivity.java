@@ -135,6 +135,7 @@ public  class SignUpActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             try {
                 //converting response to json object
+                System.out.println("\n\n\n" + s + "\n\n\n");
                 JSONObject obj = new JSONObject(s);
                 //if no error in response
                 if (!obj.getBoolean("error")) {

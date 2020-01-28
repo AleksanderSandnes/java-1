@@ -18,6 +18,7 @@ public class ProfileActivityAdmin extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         init();
+        meldinger();
     }
     void init(){
         textViewUsername = findViewById(R.id.editTextUsernameAdmin);
@@ -39,5 +40,14 @@ public class ProfileActivityAdmin extends AppCompatActivity {
                 PrefManager.getInstance(getApplicationContext()).logout();
             }
         });
+    }
+
+    void meldinger() {
+
+
+
+
+
+
     }
 }
