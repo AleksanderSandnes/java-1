@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivityLecturer extends AppCompatActivity {
 
-    TextView textViewId, textViewEmail, textViewPassword, textViewGender;
+    TextView textViewId, textViewEmail, textViewPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

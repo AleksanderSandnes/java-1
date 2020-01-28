@@ -117,7 +117,7 @@ public class LoginActivityAdmin extends AppCompatActivity {
             params.put("password", passwordAdmin);
 
             //returing the response
-            return requestHandler.sendPostRequest(URLS.URL_LOGIN, params);
+            return requestHandler.sendPostRequest(URLS.URL_LOGIN_ADMIN, params);
         }
     }
 }

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 public class PrefManager {
-    private static final String SHARED_PREF_NAME = "prodevsblogpref";
+    private static final String SHARED_PREF_NAME = "example";
     private static final String KEY_NAME = "user_name";
     private static final String KEY_EMAIL = "user_email";
     private static final String KEY_ID = "user_id";

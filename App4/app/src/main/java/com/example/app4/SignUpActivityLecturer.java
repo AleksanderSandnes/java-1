@@ -115,7 +115,7 @@ public  class SignUpActivityLecturer extends AppCompatActivity {
             params.put("password", password);
             params.put("bildeurl", bildeurl);
             //returing the response
-            return requestHandler.sendPostRequest(URLS.URL_REGISTER, params);
+            return requestHandler.sendPostRequest(URLS.URL_REGISTER_LECTURER, params);
         }
 
         @Override

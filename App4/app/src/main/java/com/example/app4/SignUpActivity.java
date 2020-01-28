@@ -124,7 +124,7 @@ public  class SignUpActivity extends AppCompatActivity {
             params.put("year", year);
             //returing the response
             System.out.println(params + " MONEY");
-            return requestHandler.sendPostRequest(URLS.URL_REGISTER, params);
+            return requestHandler.sendPostRequest(URLS.URL_REGISTER_USER, params);
         }
 
         @Override
@@ -135,7 +135,7 @@ public  class SignUpActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             try {
                 //converting response to json object
-                System.out.println("\n\n\n" + s + "\n\n\n");
+                result=getJSONUrl()
                 JSONObject obj = new JSONObject(s);
                 //if no error in response
                 if (!obj.getBoolean("error")) {

@@ -117,7 +117,7 @@ public class LoginActivityAnon extends AppCompatActivity {
             params.put("password", passwordAnon);
 
             //returing the response
-            return requestHandler.sendPostRequest(URLS.URL_LOGIN, params);
+            return requestHandler.sendPostRequest(URLS.URL_LOGIN_ANON, params);
         }
     }
 }

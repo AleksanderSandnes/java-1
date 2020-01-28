@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivityAdmin extends AppCompatActivity {
 
-    TextView textViewId, textViewUsername, textViewEmail, textViewGender;
+    TextView textViewId, textViewUsername, textViewEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

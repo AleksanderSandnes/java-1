@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivityAnon extends AppCompatActivity {
 
-    TextView textViewId, textViewUsername, textViewPassword, textViewGender;
+    TextView textViewId, textViewUsername, textViewPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

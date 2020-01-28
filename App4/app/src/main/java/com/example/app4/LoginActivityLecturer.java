@@ -127,7 +127,7 @@ public class LoginActivityLecturer extends AppCompatActivity {
             params.put("password", password);
 
             //returing the response
-            return requestHandler.sendPostRequest(URLS.URL_LOGIN, params);
+            return requestHandler.sendPostRequest(URLS.URL_LOGIN_LECTURER, params);
         }
     }
 }
