@@ -142,7 +142,7 @@ public  class SignUpActivityLecturer extends AppCompatActivity {
                     PrefManager.getInstance(getApplicationContext()).setLecturerLogin(lecturer);
                     //starting the profile activity
                     finish();
-                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                    startActivity(new Intent(getApplicationContext(), ProfileActivityLecturer.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Some error occurred", Toast.LENGTH_SHORT).show();
                 }
