@@ -96,14 +96,14 @@ public class LoginActivityLecturer extends AppCompatActivity {
                     JSONObject UserJson = obj.getJSONObject("user");
 
                     //creating a new user object
-                    Lecturer lecturer = new Lecturer(
+                    User user = new User(
                             UserJson.getInt("id"),
                             UserJson.getString("name"),
                             UserJson.getString("email")
                     );
 
                     //storing the user in shared preferences
-                    PrefManager.getInstance(getApplicationContext()).setLecturerLogin(lecturer);
+                    PrefManager.getInstance(getApplicationContext()).setUserLogin(user);
 
                     //starting the profile activity
                     finish();
