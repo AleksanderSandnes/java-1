@@ -107,7 +107,7 @@ public class LoginActivityLecturer extends AppCompatActivity {
 
                     //starting the profile activity
                     finish();
-                    startActivity(new Intent(getApplicationContext(), ProfileActivityLecturer.class));
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }

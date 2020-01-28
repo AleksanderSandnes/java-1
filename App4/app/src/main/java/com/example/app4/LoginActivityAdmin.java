@@ -86,18 +86,18 @@ public class LoginActivityAdmin extends AppCompatActivity {
                     JSONObject UserJson = obj.getJSONObject("user");
 
                     //creating a new user object
-                    Admin admin = new Admin(
+                    User user = new User(
                             UserJson.getInt("id"),
                             UserJson.getString("username"),
                             UserJson.getString("email")
                     );
 
                     //storing the user in shared preferences
-                    PrefManager.getInstance(getApplicationContext()).setAdminLogin(admin);
+                    PrefManager.getInstance(getApplicationContext()).setUserLogin(user);
 
                     //starting the profile activity
                     finish();
-                    startActivity(new Intent(getApplicationContext(), ProfileActivityAdmin.class));
+                    startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                 } else {
                     Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }

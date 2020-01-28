@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
                     //creating a new user object
                     User user = new User(
                             userJson.getInt("id"),
-                            userJson.getString("name"),
+                            userJson.getString("password"),
                             userJson.getString("email")
                     );
 
