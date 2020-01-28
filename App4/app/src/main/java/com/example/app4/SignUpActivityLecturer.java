@@ -131,12 +131,12 @@ public  class SignUpActivityLecturer extends AppCompatActivity {
                 if (!obj.getBoolean("error")) {
                     Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     //getting the user from the response
-                    JSONObject LecturerJson = obj.getJSONObject("lecturer");
+                    JSONObject UserJson = obj.getJSONObject("user");
                     //creating a new user object
                     Lecturer lecturer = new Lecturer(
-                            LecturerJson.getInt("id"),
-                            LecturerJson.getString("username"),
-                            LecturerJson.getString("email")
+                            UserJson.getInt("id"),
+                            UserJson.getString("username"),
+                            UserJson.getString("email")
                     );
                     //storing the user in shared preferences
                     PrefManager.getInstance(getApplicationContext()).setLecturerLogin(lecturer);

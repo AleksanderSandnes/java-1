@@ -83,13 +83,13 @@ public class LoginActivityAnon extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                     //getting the user from the response
-                    JSONObject anonJson = obj.getJSONObject("anon");
+                    JSONObject UserJson = obj.getJSONObject("user");
 
                     //creating a new user object
                     Anon anon = new Anon(
-                            anonJson.getInt("id"),
-                            anonJson.getString("username"),
-                            anonJson.getString("password")
+                            UserJson.getInt("id"),
+                            UserJson.getString("username"),
+                            UserJson.getString("password")
                     );
 
                     //storing the user in shared preferences

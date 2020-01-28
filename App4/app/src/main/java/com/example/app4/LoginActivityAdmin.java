@@ -83,13 +83,13 @@ public class LoginActivityAdmin extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
 
                     //getting the user from the response
-                    JSONObject adminJson = obj.getJSONObject("admin");
+                    JSONObject UserJson = obj.getJSONObject("user");
 
                     //creating a new user object
                     Admin admin = new Admin(
-                            adminJson.getInt("id"),
-                            adminJson.getString("username"),
-                            adminJson.getString("email")
+                            UserJson.getInt("id"),
+                            UserJson.getString("username"),
+                            UserJson.getString("email")
                     );
 
                     //storing the user in shared preferences
