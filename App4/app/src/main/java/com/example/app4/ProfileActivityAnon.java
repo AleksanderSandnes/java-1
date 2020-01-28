@@ -25,12 +25,12 @@ public class ProfileActivityAnon extends AppCompatActivity {
         textViewPassword = findViewById(R.id.editTextPasswordAnon);
 
         //getting the current user
-        Anon anon = PrefManager.getInstance(this).getAnon();
+        User user = PrefManager.getInstance(this).getUser();
 
         //setting the values to the textviews
-        textViewId.setText(String.valueOf(anon.getId()));
-        textViewUsername.setText(anon.getUsername());
-        textViewPassword.setText(anon.getPassword());
+        textViewId.setText(String.valueOf(user.getId()));
+        textViewUsername.setText(user.getName());
+        textViewPassword.setText(user.getPassword());
 
         //when the user presses logout button calling the logout method
         findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {

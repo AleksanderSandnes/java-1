@@ -25,12 +25,12 @@ public class ProfileActivityAdmin extends AppCompatActivity {
         textViewEmail = findViewById(R.id.editTextPasswordAdmin);
 
         //getting the current user
-        Admin admin = PrefManager.getInstance(this).getAdmin();
+        User user = PrefManager.getInstance(this).getUser();
 
         //setting the values to the textviews
-        textViewId.setText(String.valueOf(admin.getId()));
-        textViewUsername.setText(admin.getUsername());
-        textViewEmail.setText(admin.getEmail());
+        textViewId.setText(String.valueOf(user.getId()));
+        textViewUsername.setText(user.getName());
+        textViewEmail.setText(user.getEmail());
 
         //when the user presses logout button calling the logout method
         findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
